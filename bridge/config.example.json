@@ -1,0 +1,12 @@
+{
+  "ownerName": "Me",
+  "assistantName": "Claude",
+  "agentId": "claude",
+  "dataDir": "state",
+  "noticeAfterMinutes": 4,
+  "voice": {
+    "enabled": false,
+    "command": "python transcribe.py {file}",
+    "keepAudio": false
+  }
+}

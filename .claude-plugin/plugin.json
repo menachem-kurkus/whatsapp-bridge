@@ -1,0 +1,8 @@
+{
+  "name": "whatsapp-bridge",
+  "version": "0.1.0",
+  "description": "Message your own Claude Code session from WhatsApp. A small poller prints each WhatsApp message into your session's Monitor; replies go back with one command. Includes a setup skill.",
+  "author": { "name": "Menachem Kurkus" },
+  "license": "MIT",
+  "keywords": ["whatsapp", "bridge", "chat", "monitor"]
+}

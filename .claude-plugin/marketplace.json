@@ -1,0 +1,17 @@
+{
+  "name": "whatsapp-bridge",
+  "owner": { "name": "menachem-kurkus" },
+  "metadata": {
+    "description": "Chat with your own Claude Code session from WhatsApp."
+  },
+  "plugins": [
+    {
+      "name": "whatsapp-bridge",
+      "source": "./",
+      "description": "Message your own Claude Code session from WhatsApp. Includes a setup skill that walks your AI through the whole install.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "keywords": ["whatsapp", "bridge", "chat", "monitor"]
+    }
+  ]
+}

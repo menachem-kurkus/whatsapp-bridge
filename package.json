@@ -1,0 +1,14 @@
+{
+  "name": "whatsapp-bridge",
+  "version": "0.1.0",
+  "description": "Message your own Claude Code session from WhatsApp.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Menachem Kurkus",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node test/run-test.mjs",
+    "set-key": "node bridge/set-key.mjs",
+    "poller": "node bridge/poller.mjs"
+  }
+}

@@ -1,0 +1,15 @@
+# Your settings, keys, logs and chat history never go in git
+bridge/config.json
+.env
+.env.*
+*.key
+bridge/state/
+state/
+media/
+*.log
+inbox.jsonl
+sent.jsonl
+chat.jsonl
+node_modules/
+.DS_Store
+Thumbs.db
