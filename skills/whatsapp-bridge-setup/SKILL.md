@@ -9,6 +9,10 @@ You are helping the user chat with THIS Claude Code session from WhatsApp. A sma
 
 Nothing connects in to the computer: the poller only makes outbound requests. Only the person who made the WhatsApp agent can message it.
 
+## Two modes
+
+This guide covers the **live bridge** (you, this session, answer). If the user wants a different AI (Codex, an API key, a local model, any command), or an always-on helper without an open session, use the **helper** in `helper/`: read `helper/SETUP-FOR-AI.md` and follow it. Both share the key file and the `chat.jsonl` format.
+
 ## Rules that never bend
 
 1. **The WhatsApp key never passes through you.** Do not ask the user to paste it into the chat. Do not write it into a file, a command line, or a log. The user runs `node bridge/set-key.mjs` in their own terminal and types it into the hidden prompt there. If they paste a key into the chat anyway, tell them to create a new key in WhatsApp (the pasted one is burned) and do not repeat it back.

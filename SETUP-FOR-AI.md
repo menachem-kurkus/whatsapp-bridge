@@ -6,6 +6,10 @@ You are an AI assistant (Claude Code or similar) helping a person connect WhatsA
 
 `bridge/poller.mjs` asks WhatsApp for new messages (outbound only) and prints each as `WHATSAPP {json}`. Claude Code's **Monitor** tool runs that command, so each line wakes the session. Replies go out with `node bridge/send.mjs "text"` or `node bridge/sendfile.mjs <path>`. Everything is saved to `bridge/state/chat.jsonl` (see `CHAT-LOG.md`).
 
+## Which mode?
+
+Default to the **live bridge** below (your own session answers). If the person wants a different AI, wants it running in the background without an open session, or has no Claude Code session, use the **helper**: read `helper/SETUP-FOR-AI.md` and follow it. The key file is the same for both (`node bridge/set-key.mjs`, which the helper also reads), and both write `chat.jsonl` in the format in `CHAT-LOG.md`. Check them with `node test/run-test.mjs` (live bridge) and `node test/run-helper-test.mjs` (helper).
+
 ## Hard rules
 
 1. **Never handle the WhatsApp key.** Do not ask the person to paste it into the chat, and never put it in a file, command line or log. They run `node bridge/set-key.mjs` in their own terminal and type it at the hidden prompt. If they paste it into the chat by mistake, tell them to make a new key.

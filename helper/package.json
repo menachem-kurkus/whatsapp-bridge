@@ -1,0 +1,10 @@
+{
+  "name": "whatsapp-agent-kit",
+  "version": "1.0.0",
+  "description": "Turn a WhatsApp agent chat into an assistant powered by the AI model you choose.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node agent.mjs", "try": "node agent.mjs --try" },
+  "optionalDependencies": { "@anthropic-ai/sdk": "^1.0.0" }
+}

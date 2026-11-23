@@ -4,7 +4,7 @@
 import http from 'node:http';
 
 const port = Number(process.argv[2] || 8799);
-const now = Math.floor(Date.now() / 1000);
+const now = Math.floor(Date.now() / 1000) + 60; // slightly in the future so "skip old backlog" never hides them
 const wamid = (n) => `wamid.TEST${n}`;
 let delivered = false;
 let sendCount = 0;

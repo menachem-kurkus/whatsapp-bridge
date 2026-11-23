@@ -7,7 +7,7 @@
   "author": "Menachem Kurkus",
   "engines": { "node": ">=20" },
   "scripts": {
-    "test": "node test/run-test.mjs",
+    "test": "node test/run-test.mjs && node test/run-helper-test.mjs",
     "set-key": "node bridge/set-key.mjs",
     "poller": "node bridge/poller.mjs"
   }

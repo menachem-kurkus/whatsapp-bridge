@@ -15,7 +15,18 @@ Message your own Claude Code session from WhatsApp. You text from your phone, yo
 
 Not using the plugin? Clone this repo, then give your AI [SETUP-FOR-AI.md](SETUP-FOR-AI.md).
 
-## How it works
+## Two ways to run it
+
+| | **Live bridge** (`bridge/`, the default) | **Helper** (`helper/`) |
+|---|---|---|
+| Who answers | Your open Claude Code session itself, with all its memory and tools | A helper program that starts a fresh AI job per message |
+| AI you can use | Claude Code | Claude Code, Codex, an API key (Anthropic, OpenAI-style services, Gemini, OpenRouter...), a local model, or any command |
+| Always on | Only while the session is open and the poller runs under Monitor | Can run in the background; `helper/install-mac.sh` restarts it on a Mac |
+| Start here | The 60-second version above | [helper/README.md](helper/README.md) and [helper/60-SECONDS.md](helper/60-SECONDS.md) |
+
+Both write the same `chat.jsonl` format and use the same key file (`node bridge/set-key.mjs`). The helper is the original assistant kit; the live bridge adds the Monitor-based path, quoted-reply text, video frames, session names in the history and Windows support for the key.
+
+## How the live bridge works
 
 ```
 your phone ── WhatsApp ── (outbound poll) ── poller.mjs ── prints a line ──> Claude Code's Monitor
@@ -42,7 +53,7 @@ About 12 sends a minute, 15 polls a minute, 4096 characters per message, images 
 
 ## Tested
 
-- Verified on Windows with a fake local WhatsApp service (`node test/run-test.mjs`): polling, text and file send, incoming files, de-duplication, history lines, shared copies of files.
+- Verified on Windows with a fake local WhatsApp service (`npm test`, or `node test/run-test.mjs` and `node test/run-helper-test.mjs`): polling, text and file send, incoming files, de-duplication, history lines, shared copies of files, and the helper answering through a command "model".
 - **Not verified by the author:** the real WhatsApp service from a fresh account, macOS and Linux, voice transcription, video frames, and installing through `/plugin marketplace add` from GitHub.
 
 ## License

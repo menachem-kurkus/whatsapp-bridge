@@ -13,3 +13,13 @@ chat.jsonl
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Helper mode (kit)
+helper/config.json
+helper/state/
+helper/logs/
+helper/inbox/
+helper/media/
+helper/workspace/
+helper/live/
+helper/node_modules/
